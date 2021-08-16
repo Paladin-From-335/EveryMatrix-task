@@ -23,6 +23,17 @@ public class ShipsCounter {
                         count++;
                         continue;
                     }
+
+                    // Если всё же должно определять части массива типа 1 1 как один кораблик, то поможет этот участок кода
+                    //                                                  1 1
+//                    if (i < 9 && k < 9 && ships[i + 1][k] == 1 && ships[i][k + 1] == 1 && ships[i + 1][k + 1] == 1) {
+//                        ships[i + 1][k] = 2;
+//                        ships[i][k + 1] = 2;
+//                        ships[i + 1][k + 1] = 2;
+//                        count++;
+//                        continue;
+//                    }
+
                     // Проверка на то, есть ли палубы справа от найденной части корабля
                     while (k + index < ships[i].length && ships[i][k + index] == 1) {
                         ships[i][k + index] = 2;
